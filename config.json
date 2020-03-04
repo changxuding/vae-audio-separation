@@ -1,0 +1,54 @@
+{
+    "dataset": {
+
+		"silence_path" : "H:/URMP/silence.wav",
+        "train_path"  : "H:/URMP/train",
+		"val_path" : "H:/URMP/val",
+        "batch_size" : 16,
+        "input_length" : 16384
+    },
+
+    "model": {
+		"input_length" : 16384,
+        "shallow_model": [
+            {"f": 48, "p": 1, "down": 31, "up": 15},
+            {"f": 48, "p": 4, "down": 31, "up": 15},
+            {"f": 144, "p": 4, "down": 31, "up": 15},
+            {"f": 240, "p": 4, "down": 31, "up": 15},
+            {"f": 336, "p": 4, "down": 31, "up": 15},
+            {"f": 432, "p": 4, "down": 31, "up": 15},
+            {"f": 528, "p": 4, "down": 31, "up": 15}],
+        
+    "deep_model":  [
+            {"f": 48, "p": 1, "down": 15, "up": 5},
+            {"f": 48, "p": 2, "down": 15, "up": 5},
+            {"f": 96, "p": 2, "down": 15, "up": 5},
+            {"f": 144, "p": 2, "down": 15, "up": 5},
+            {"f": 192, "p": 2, "down": 15, "up": 5},
+            {"f": 240, "p": 2, "down": 15, "up": 5},
+            {"f": 288, "p": 2, "down": 15, "up": 5},
+            {"f": 336, "p": 2, "down": 15, "up": 5},
+            {"f": 384, "p": 2, "down": 15, "up": 5},
+            {"f": 432, "p": 2, "down": 15, "up": 5},
+            {"f": 480, "p": 2, "down": 15, "up": 5}],
+
+      "input_length" :16384,
+      "latent" : 100,
+      "source_num": 3,
+      "dense" : 50,
+      "alpha_relu": 0.2,
+      "drop_out": 0.25,
+      "l2": 0.01,
+      "lr": 0.0001
+    },
+
+    "training": {
+        "batch_size": 16,
+        "early_stopping_epoch": 20,
+        "num_epochs": 150,
+        "num_steps_val": 500,
+        "num_steps_train": 2500,
+        "path": "H：/ding/checkpoints",
+        "verbosity": 1
+    }
+}
